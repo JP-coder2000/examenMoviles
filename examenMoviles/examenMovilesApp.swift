@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct examenMovilesApp: App {
-    @StateObject private var viewModel = MovieViewModel()
-
+struct MoviesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
         }
     }
 }

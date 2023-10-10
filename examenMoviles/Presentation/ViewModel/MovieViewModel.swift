@@ -7,17 +7,17 @@
 
 import Foundation
 
+@MainActor
 class MovieViewModel: ObservableObject {
-    @Published var movies = [Movie]()
-    private var useCase: MoviesUseCaseProtocol
+    @Published var moviesArray = [Result]()
     
-    init(useCase: MoviesUseCaseProtocol = MoviesUseCase()) {
-        self.useCase = useCase
+    private let getListOfMoviesUseCase: GetListOfMoviesUseCase
+
+    init(getListOfMoviesUseCase: GetListOfMoviesUseCase = GetListOfMoviesUseCaseImpl()) {
+        self.getListOfMoviesUseCase = getListOfMoviesUseCase
     }
-    
-    func fetchMovies() async {
-        if let movieResponse = await useCase.getMovies() {
-            movies = movieResponse.results
-        }
+
+    func fetch() async {
+        moviesArray = await getListOfMoviesUseCase.getListOfMovies()
     }
 }

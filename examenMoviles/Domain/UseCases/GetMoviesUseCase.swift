@@ -5,20 +5,23 @@
 //  Created by Juan Pablo Cabrera on 10/10/23.
 //
 
+
 import Foundation
 
-protocol MoviesUseCaseProtocol {
-    func getMovies() async -> MovieResponse?
+protocol GetListOfMoviesUseCase {
+    func getListOfMovies() async -> [Result]
 }
 
-class MoviesUseCase: MoviesUseCaseProtocol {
-    let repository: MoviesRepository
+struct GetListOfMoviesUseCaseImpl: GetListOfMoviesUseCase {
+    let moviesRepository: MoviesProtocol
     
-    init(repository: MoviesRepository = MoviesRepository.shared) {
-        self.repository = repository
+    static let shared = GetListOfMoviesUseCaseImpl()
+
+    init(moviesRepository: MoviesProtocol = MoviesRepository()) {
+        self.moviesRepository = moviesRepository
     }
-    
-    func getMovies() async -> MovieResponse? {
-        return await repository.getMovies()
-    }
+
+  func getListOfMovies() async -> [Result] {
+      return await moviesRepository.getListMovies() ?? []
+  }
 }
