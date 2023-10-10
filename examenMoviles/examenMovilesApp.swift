@@ -6,27 +6,15 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct examenMovilesApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @StateObject private var viewModel = MovieViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

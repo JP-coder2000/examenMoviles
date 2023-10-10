@@ -1,3 +1,10 @@
+//
+//  MovieModels.swift
+//  examenMoviles
+//
+//  Created by Juan Pablo Cabrera on 10/10/23.
+//
+
 import Foundation
 
 struct MovieResponse: Codable {
@@ -23,4 +30,3 @@ struct Movie: Codable {
     let vote_average: Int
     let vote_count: Int
 }
-

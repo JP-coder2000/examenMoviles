@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76025B772AD5CC8A0052BC59 /* MoviesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76025B762AD5CC8A0052BC59 /* MoviesModels.swift */; };
+		76025B792AD5CCDF0052BC59 /* MoviesNetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76025B782AD5CCDF0052BC59 /* MoviesNetworkAPIService.swift */; };
+		76025B7B2AD5CCFA0052BC59 /* MoviesRepositoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76025B7A2AD5CCFA0052BC59 /* MoviesRepositoryAPIService.swift */; };
+		76025B7D2AD5CDEB0052BC59 /* GetMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76025B7C2AD5CDEB0052BC59 /* GetMoviesUseCase.swift */; };
+		76025B7F2AD5CE300052BC59 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76025B7E2AD5CE300052BC59 /* MovieViewModel.swift */; };
 		76F81B9E2AD5C1420008885B /* examenMovilesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F81B9D2AD5C1420008885B /* examenMovilesApp.swift */; };
 		76F81BA02AD5C1420008885B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F81B9F2AD5C1420008885B /* ContentView.swift */; };
 		76F81BA22AD5C1420008885B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F81BA12AD5C1420008885B /* Item.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76025B762AD5CC8A0052BC59 /* MoviesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModels.swift; sourceTree = "<group>"; };
+		76025B782AD5CCDF0052BC59 /* MoviesNetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNetworkAPIService.swift; sourceTree = "<group>"; };
+		76025B7A2AD5CCFA0052BC59 /* MoviesRepositoryAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryAPIService.swift; sourceTree = "<group>"; };
+		76025B7C2AD5CDEB0052BC59 /* GetMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoviesUseCase.swift; sourceTree = "<group>"; };
+		76025B7E2AD5CE300052BC59 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		76F81B9A2AD5C1420008885B /* examenMoviles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = examenMoviles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F81B9D2AD5C1420008885B /* examenMovilesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examenMovilesApp.swift; sourceTree = "<group>"; };
 		76F81B9F2AD5C1420008885B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 		76F81BB22AD5C18E0008885B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				76025B7E2AD5CE300052BC59 /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 		76F81BB32AD5C1AE0008885B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76025B762AD5CC8A0052BC59 /* MoviesModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +140,7 @@
 		76F81BB42AD5C1B30008885B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				76025B782AD5CCDF0052BC59 /* MoviesNetworkAPIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -135,6 +148,7 @@
 		76F81BB52AD5C1B90008885B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				76025B7A2AD5CCFA0052BC59 /* MoviesRepositoryAPIService.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -142,6 +156,7 @@
 		76F81BB62AD5C1CD0008885B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				76025B7C2AD5CDEB0052BC59 /* GetMoviesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -222,8 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76025B772AD5CC8A0052BC59 /* MoviesModels.swift in Sources */,
 				76F81BA02AD5C1420008885B /* ContentView.swift in Sources */,
+				76025B792AD5CCDF0052BC59 /* MoviesNetworkAPIService.swift in Sources */,
+				76025B7F2AD5CE300052BC59 /* MovieViewModel.swift in Sources */,
 				76F81BA22AD5C1420008885B /* Item.swift in Sources */,
+				76025B7D2AD5CDEB0052BC59 /* GetMoviesUseCase.swift in Sources */,
+				76025B7B2AD5CCFA0052BC59 /* MoviesRepositoryAPIService.swift in Sources */,
 				76F81B9E2AD5C1420008885B /* examenMovilesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
