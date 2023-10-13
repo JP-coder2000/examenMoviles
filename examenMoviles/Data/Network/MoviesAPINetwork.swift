@@ -8,6 +8,13 @@
 import Foundation
 import Alamofire
 
+/**
+ * En esta parte hago la petición con el token de acceso para poder obtener la lista de peliculas
+ * me baso en el documento que tenemos en el repositorio de github: https://github.com/salgue441/Net-Zero-Citizens/blob/e7e9b2e6ac57dffbd7692298ddd16fca796624fd/ios/GreenCircle/GreenCircle/Data/Remote/Network/NetworkAPIService.swift#L140
+ * Además de un poco de ayuda de la IA "PHIND" para poder utilizar el token de forma correcta.
+ * Lo demás del código es lo que hemos visto en los laboratorios de clase y mi proyecto validado por la
+ * profesora.
+ */
 
 class MoviesAPINetwork {
     static let shared = MoviesAPINetwork()

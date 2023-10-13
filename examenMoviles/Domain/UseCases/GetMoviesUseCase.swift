@@ -8,9 +8,20 @@
 
 import Foundation
 
+/**
+ * Utilizo un protocolo para hacer pruebas unitarias, 
+ * como lo recomienda en el laboratorio.
+ */
+
 protocol GetListOfMoviesUseCase {
     func getListOfMovies() async -> [Result]
 }
+
+/**
+ * Lo primero que hago es inicalizar mi singleton
+ * Agrego el método para poder inicializar la instancia
+ * Por último hago la llamada al repository
+ */
 
 struct GetListOfMoviesUseCaseImpl: GetListOfMoviesUseCase {
     let moviesRepository: MoviesProtocol

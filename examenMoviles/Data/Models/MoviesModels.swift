@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ * Me baso en lo que me dice la página de internet
+ * https://quicktype.io/ para poder hacer el modelo.
+ */
 struct Result: Codable {
     var adult: Bool
     var backdrop_path: String
@@ -23,6 +27,11 @@ struct Result: Codable {
     var vote_average: Double
     var vote_count: Int
 }
+
+/**
+ * Modelo para la lista de peliculas
+ * 
+ */
 
 struct Response: Decodable {
     let page: Int
