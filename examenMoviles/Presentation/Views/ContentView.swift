@@ -1,3 +1,17 @@
+//
+//  ContentView.swift
+//  examenMoviles
+//
+//  Created by Juan Pablo Cabrera on 10/10/23.
+//
+
+
+
+/**
+* En esta parte despliego la vista principal de la aplicación, en la cual se muestra la lista de películas
+* que se obtienen de la API de The Movie Database.
+*/
+
 import SwiftUI
 
 struct ContentView: View {
@@ -8,10 +22,11 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 ForEach(viewModel.moviesArray, id: \.id) { movie in
                     HStack(spacing: 16) {
+                        // AsyncImage para cargar la imagen de la película desde la URL
                         AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.poster_path)")!) { phase in
                             switch phase {
                             case .empty:
-                                ProgressView()
+                                ProgressView() // Muestra una vista de progreso mientras se carga la imagen
                             case .success(let image):
                                 image
                                     .resizable()
@@ -19,7 +34,7 @@ struct ContentView: View {
                                     .frame(width: 100, height: 150)
                                     .cornerRadius(10)
                             case .failure:
-                                Image(systemName: "photo")
+                                Image(systemName: "photo") // Muestra una imagen de reemplazo en caso de error al cargar la imagen
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 100, height: 150)
@@ -28,26 +43,31 @@ struct ContentView: View {
                                 EmptyView()
                             }
                         }
-                        
+                        // VStack para mostrar los datos de la película
                         VStack(alignment: .leading, spacing: 30) {
+                            // Título de la película
                             Text(movie.title)
                                 .foregroundColor(.black)
                                 .font(.title)
                                 .bold()
                                 .padding(.trailing, 50)
                             
+                            // Fecha de lanzamiento de la película
                             Text("Release Date: \(movie.release_date)")
                                 .font(.subheadline)
                                 .foregroundColor(.blue)
                             
+                            // Popularidad de la película
                             Text("Popularity: \(movie.popularity)")
                                 .font(.subheadline)
                                 .foregroundColor(.blue)
                             
+                            // Calificación de la película
                             Text("Rating: \(movie.vote_average)")
                                 .font(.subheadline)
                                 .foregroundColor(.blue)
                             
+                            // Resumen de la película
                             Text("Overview:")
                                 .font(.subheadline)
                                 .foregroundColor(.blue)
@@ -69,10 +89,10 @@ struct ContentView: View {
         }
         .onAppear {
             Task {
-                await viewModel.fetch()
+                await viewModel.fetch() // Llama a la función fetch() del viewModel para obtener la lista de películas
             }
         }
-        .navigationTitle("Películas de JP")
+        .navigationTitle("Películas de JP") // Título de la vista
         .padding()
     }
 }
@@ -82,4 +102,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
